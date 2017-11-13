@@ -11,6 +11,11 @@ import * as util from './shared/utilities';
 export class AppComponent {
   public todoItems: TodoItem[] = [];
   public filterType: TodoType = TodoType.ALL;
+  public todoType = {
+    all: TodoType.ALL,
+    active: TodoType.ACTIVE,
+    completed: TodoType.COMPLETED
+  };
 
   constructor() {
 

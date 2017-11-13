@@ -21,13 +21,13 @@
     </span>
     <ul class="filters">
       <li>
-        <a [ngClass]="{'selected': filterType === 'all'}" (click)="filterTodo('all')">All</a>
+        <a [ngClass]="{'selected': filterType === 'all'}" (click)="filterTodo(todoType.all)">All</a>
       </li>
       <li>
-          <a [ngClass]="{'selected': filterType === 'active'}" (click)="filterTodo('active')">Active</a>
+          <a [ngClass]="{'selected': filterType === 'active'}" (click)="filterTodo(todoType.active)">Active</a>
       </li>
       <li>
-          <a [ngClass]="{'selected': filterType === 'completed'}" (click)="filterTodo('completed')">Completed</a>
+          <a [ngClass]="{'selected': filterType === 'completed'}" (click)="filterTodo(todoType.completed)">Completed</a>
       </li>
     </ul>
     <button class="clear-completed" (click)="clearCompleted()">Clear completed</button>
