@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { TodoItem } from './todo-item';
-import { TodoType } from './todo-type.enum';
+import { TodoItem } from '../interface/todo-item';
+import { TodoType } from '../todo-type.enum';
 
 @Pipe({
   name: 'todoFilter',

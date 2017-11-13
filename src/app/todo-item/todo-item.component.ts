@@ -1,5 +1,5 @@
 import { Component, OnInit, DoCheck, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
-import { TodoItem } from '../todo-item';
+import { TodoItem } from '../shared/interface/todo-item';
 import { Element } from '@angular/compiler';
 @Component({
   selector: 'app-todo-item',
