@@ -4,14 +4,16 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
-import { TodoFilterPipe } from './todo-filter.pipe';
+import { TodoFilterPipe } from './shared/pipes/todo-filter.pipe';
+import { TodoFooterComponent } from './todo-footer/todo-footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoItemComponent,
-    TodoFilterPipe
+    TodoFilterPipe,
+    TodoFooterComponent
   ],
   imports: [
     BrowserModule
