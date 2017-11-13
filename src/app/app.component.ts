@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { TodoItem } from './todo-item';
-import { TodoType } from './todo-type.enum';
+import { TodoItem } from './shared/interface/todo-item';
+import { TodoType } from './shared/todo-type.enum';
+import * as util from './shared/utilities';
 
 @Component({
   selector: 'app-root',
@@ -12,23 +13,13 @@ export class AppComponent {
   public filterType: TodoType = TodoType.ALL;
 
   constructor() {
-    this.todoItems = [{
-      id: 1,
-      content: 'hello world',
-      isCompleted: false,
-      isRemoved: false,
-    }, {
-      id: 2,
-      content: 'Go to Costco',
-      isCompleted: true,
-      isRemoved: true
-    }];
+
+    this.todoItems = [];
   }
 
   createTodoItem(content) {
-    const newId = this.todoItems.length + 1;
     return {
-      id: newId,
+      id: util.s4(),
       content: content,
       isCompleted: false,
       isRemoved: false
@@ -44,6 +35,9 @@ export class AppComponent {
   }
 
   onEnter(item) {
+    if (item && item.value.length === 0) {
+      return;
+    }
     const newItem = this.createTodoItem(item.value);
     this.todoItems.unshift(newItem);
     item.value = '';
